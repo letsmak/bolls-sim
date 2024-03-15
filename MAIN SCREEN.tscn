@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://deiad26p6jvhd"]
+
+[ext_resource type="Script" path="res://main screen.gd" id="1_4yuru"]
+[ext_resource type="Texture2D" uid="uid://dym3bt1xk50uv" path="res://ball logo.png" id="2_or6an"]
+
+[node name="main screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4yuru")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 606.0
+offset_top = 123.0
+offset_right = 659.0
+offset_bottom = 224.0
+scale = Vector2(10.6635, 4.80209)
+pivot_offset = Vector2(29.0712, 6.66376)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "play"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "menu"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "quite"
+
+[node name="BallLogo" type="Sprite2D" parent="."]
+position = Vector2(484, 354)
+scale = Vector2(0.651713, 0.791125)
+texture = ExtResource("2_or6an")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

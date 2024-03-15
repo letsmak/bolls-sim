@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpgb2kijjbdv7"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgb2kijjbdv7"]
 
 [ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_djffv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jmxjm"]
 radius = 0.677043
 height = 2.40419
+
+[sub_resource type="BoxMesh" id="BoxMesh_ggojc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rb7kf"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_djffv")
@@ -18,3 +22,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02082, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521817, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.219443, 0, 0, 0, 0.0979732, 0, 0, 0, 1, -0.525402, 1.24043, -0.70038)
+mesh = SubResource("BoxMesh_ggojc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.268874, 0, 0, 0, 0.103224, 0, 0, 0, 1.0923, 0.438363, 1.14126, -0.683437)
+mesh = SubResource("BoxMesh_ggojc")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.03083, 0, 0, 0, 0.949869, 0, 0, 0, 1.07909, 0, 0.985095, 0.223771)
+mesh = SubResource("CapsuleMesh_rb7kf")
